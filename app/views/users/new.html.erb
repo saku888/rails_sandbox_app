@@ -1,0 +1,24 @@
+<h1>New User</h1>
+
+<%= form_with(model: @user) do |form| %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <%= form.fields_for :size do |f| %>
+    <div class="field">
+      <%= f.label :width %>
+      <%= f.text_field :width %>
+    </div>
+
+    <div class="field">
+      <%= f.label :height %>
+      <%= f.text_field :height %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
